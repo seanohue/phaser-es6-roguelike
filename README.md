@@ -1,4 +1,6 @@
-# Phaser + ES6 + Webpack.
+
+
+## Uses Phaser + ES6 + Webpack:
 #### A bootstrap project to create games with Phaser + ES6 + Webpack.
 
 ![Phaser+ES6+Webpack](https://raw.githubusercontent.com/lean/phaser-es6-webpack/master/assets/images/phaser-es6-webpack.jpg)
@@ -36,7 +38,7 @@ Navigate to the cloned repo’s directory.
 
 Run:
 
-```npm install``` 
+```npm install```
 
 or if you choose yarn, just run ```yarn```
 
