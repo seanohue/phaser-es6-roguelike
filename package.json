@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "phaser-ce": "^2.8.0",
+    "rot-js": "^0.6.2",
     "webfontloader": "^1.6.28"
   }
 }
