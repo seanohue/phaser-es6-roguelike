@@ -9,6 +9,7 @@ export default class extends Phaser.State {
   }
 
   preload () {
+    // TODO: Have a non-web font.
     WebFont.load({
       google: {
         families: ['Bangers']

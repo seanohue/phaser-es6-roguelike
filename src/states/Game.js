@@ -7,14 +7,7 @@ export default class extends Phaser.State {
   preload () {}
 
   create () {
-    const bannerText = 'Phaser + ES6 + Webpack'
-    let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
-    banner.font = 'Bangers'
-    banner.padding.set(10, 16)
-    banner.fontSize = 40
-    banner.fill = '#77BFA3'
-    banner.smoothed = false
-    banner.anchor.setTo(0.5)
+    this.loadBanner()
 
     this.mushroom = new Mushroom({
       game: this.game,
@@ -30,5 +23,16 @@ export default class extends Phaser.State {
     if (__DEV__) {
       this.game.debug.spriteInfo(this.mushroom, 32, 32)
     }
+  }
+
+  loadBanner () {
+    const bannerText = 'Phaser + ES6 + Webpack'
+    const banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
+    banner.font = 'Bangers'
+    banner.padding.set(10, 16)
+    banner.fontSize = 40
+    banner.fill = '#77BFA3'
+    banner.smoothed = false
+    banner.anchor.setTo(0.5)
   }
 }
