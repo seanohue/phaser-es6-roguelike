@@ -2,7 +2,7 @@
 import Phaser from 'phaser'
 import Mushroom from '../sprites/Mushroom'
 
-export default class extends Phaser.State {
+export default class GameState extends Phaser.State {
   init () {}
   preload () {}
 
