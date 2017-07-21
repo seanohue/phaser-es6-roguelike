@@ -1,8 +1,8 @@
 {
-  "name": "PhaserES6Webpack",
-  "version": "1.0.0",
+  "name": "roguelike-phaser-webpack",
+  "version": "0.1.0",
   "description": "",
-  "author": "leandro cabrera <leandcabrera@gmail.com>",
+  "author": "Sean E. O'Donohue <sean.e.odonohue@gmail.com>",
   "main": "index.js",
   "scripts": {
     "dev": "webpack",
