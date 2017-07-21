@@ -2,7 +2,7 @@
 import Phaser from 'phaser'
 import Mushroom from '../sprites/Mushroom'
 
-export default class GameState extends Phaser.State {
+export default class MenuState extends Phaser.State {
   init () {}
   preload () {}
 
@@ -17,6 +17,7 @@ export default class GameState extends Phaser.State {
     })
 
     this.game.add.existing(this.mushroom)
+    this.loadMenu()
   }
 
   render () {
@@ -26,7 +27,7 @@ export default class GameState extends Phaser.State {
   }
 
   loadBanner () {
-    const bannerText = 'Phaser + ES6 + Webpack'
+    const bannerText = 'Roguelike ES6-Phaser-Webpack'
     const banner = this.configureBanner(
       this.addBannerText(bannerText)
     )
@@ -35,10 +36,12 @@ export default class GameState extends Phaser.State {
     }
   }
 
-  addBannerText(bannerText) {
+  loadMenu () {}
+
+  addBannerText (bannerText) {
     return this.add.text(
       this.world.centerX,
-      this.game.height - 80,
+      this.game.height - 20,
       bannerText
     )
   }
