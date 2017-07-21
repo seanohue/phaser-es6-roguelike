@@ -27,12 +27,29 @@ export default class extends Phaser.State {
 
   loadBanner () {
     const bannerText = 'Phaser + ES6 + Webpack'
-    const banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
-    banner.font = 'Bangers'
-    banner.padding.set(10, 16)
+    const banner = this.configureBanner(
+      this.addBannerText(bannerText)
+    )
+    if (__DEV__) {
+      console.log('Loading Banner: ', banner)
+    }
+  }
+
+  addBannerText(bannerText) {
+    return this.add.text(
+      this.world.centerX,
+      this.game.height - 80,
+      bannerText
+    )
+  }
+
+  configureBanner(banner) {
+    banner.font     = 'Bangers'
     banner.fontSize = 40
-    banner.fill = '#77BFA3'
+    banner.fill     = '#77BFA3'
     banner.smoothed = false
+    banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
+    return banner
   }
 }
