@@ -3,7 +3,10 @@ import Phaser from 'phaser'
 import Mushroom from '../sprites/Mushroom'
 
 export default class MenuState extends Phaser.State {
-  init () {}
+  init () {
+    this.menuItems = []
+  }
+
   preload () {}
 
   create () {
@@ -36,7 +39,25 @@ export default class MenuState extends Phaser.State {
     }
   }
 
-  loadMenu () {}
+  loadMenu () {
+    const menuText = [
+      {
+        label: 'Start Game',
+        action() {}
+      }, {
+        label: 'Quit',
+        action() {}
+      }
+    ]
+    this.menuItems = menuItems
+    this.renderMenuItems()
+  }
+
+  renderMenuItems () {
+    this.menuItems.forEach(this.renderMenuItem.bind(this))
+  }
+
+  renderMenuItem () {}
 
   addBannerText (bannerText) {
     return this.add.text(
