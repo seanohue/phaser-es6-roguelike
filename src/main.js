@@ -12,8 +12,8 @@ class Game extends Phaser.Game {
   constructor () {
     const docElement = document.documentElement
 
-    const width  = getHeight(docElement)
-    const height = getWidth(docElement)
+    const width  = getWidth(docElement)
+    const height = getHeight(docElement)
 
     super(width, height, Phaser.CANVAS, 'content', null)
 
