@@ -40,13 +40,13 @@ export default class MenuState extends Phaser.State {
   }
 
   loadMenu () {
-    const menuText = [
+    const menuItems = [
       {
         label: 'Start Game',
-        action() {}
+        action () {}
       }, {
         label: 'Quit',
-        action() {}
+        action () {}
       }
     ]
     this.menuItems = menuItems
@@ -67,10 +67,10 @@ export default class MenuState extends Phaser.State {
     )
   }
 
-  configureBanner(banner) {
-    banner.font     = 'Bangers'
+  configureBanner (banner) {
+    banner.font = 'Bangers'
     banner.fontSize = 40
-    banner.fill     = '#77BFA3'
+    banner.fill = '#77BFA3'
     banner.smoothed = false
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)

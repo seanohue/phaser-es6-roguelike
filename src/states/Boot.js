@@ -38,7 +38,7 @@ export default class BootState extends Phaser.State {
     this.fontsReady = true
   }
 
-  get loadingFont() {
+  get loadingFont () {
     return {
       font:
       '16px Arial',

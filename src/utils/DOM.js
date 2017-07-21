@@ -5,7 +5,7 @@ import config from '../config'
  * @param {Element} docElement
  * @return {number} height
 */
-export function getHeight(docElement) {
+export function getHeight (docElement) {
   return docElement.clientHeight > config.gameHeight
     ? config.gameHeight
     : docElement.clientHeight
@@ -16,7 +16,7 @@ export function getHeight(docElement) {
  * @param {Element} docElement
  * @return {number} width
 */
-export function getWidth(docElement) {
+export function getWidth (docElement) {
   return docElement.clientWidth > config.gameWidth
     ? config.gameWidth
     : docElement.clientWidth
