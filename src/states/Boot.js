@@ -9,15 +9,19 @@ export default class extends Phaser.State {
   }
 
   preload () {
-    // TODO: Have a non-web font.
     WebFont.load({
       google: {
         families: ['Bangers']
       },
-      active: this.fontsLoaded
+      active: this.fontsLoaded.bind(this)
     })
 
-    let text = this.add.text(this.world.centerX, this.world.centerY, 'loading fonts', { font: '16px Arial', fill: '#dddddd', align: 'center' })
+    const text = this.add.text(
+      this.world.centerX,
+      this.world.centerY,
+      'loading fonts',
+      this.loadingFont
+    )
     text.anchor.setTo(0.5, 0.5)
 
     this.load.image('loaderBg', './assets/images/loader-bg.png')
@@ -32,5 +36,14 @@ export default class extends Phaser.State {
 
   fontsLoaded () {
     this.fontsReady = true
+  }
+
+  get loadingFont() {
+    return {
+      font:
+      '16px Arial',
+      fill: '#dddddd',
+      align: 'center'
+    }
   }
 }
