@@ -5,6 +5,7 @@ import Phaser from 'phaser'
 import BootState from './states/Boot'
 import SplashState from './states/Splash'
 import GameState from './states/Game'
+import ROT from './lib/ROT'
 
 import {getHeight, getWidth} from './utils/DOM'
 

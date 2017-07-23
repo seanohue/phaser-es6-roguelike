@@ -45,7 +45,7 @@ module.exports = {
       { test: /pixi\.js/, use: ['expose-loader?PIXI'] },
       { test: /phaser-split\.js$/, use: ['expose-loader?Phaser'] },
       { test: /p2\.js/, use: ['expose-loader?p2'] },
-      { test: /rot\.js$/, use: ['exports?ROT'] }
+      { test: /rot\.js$/, use: ['expose-loader?ROT'] }
     ],
   },
   node: {
