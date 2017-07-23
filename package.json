@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack",
     "deploy": "webpack --config webpack.production.config.js",
-    "test": "eslint ./src/**/**.js"
+    "test": "eslint './src/!(vendor)/**.js'"
   },
   "license": "MIT",
   "devDependencies": {
