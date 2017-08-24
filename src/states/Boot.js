@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 import WebFont from 'webfontloader'
 
-export default class extends Phaser.State {
+export default class BootState extends Phaser.State {
   init () {
     this.stage.backgroundColor = '#EDEEC9'
     this.fontsReady = false
@@ -13,10 +13,15 @@ export default class extends Phaser.State {
       google: {
         families: ['Bangers']
       },
-      active: this.fontsLoaded
+      active: this.fontsLoaded.bind(this)
     })
 
-    let text = this.add.text(this.world.centerX, this.world.centerY, 'loading fonts', { font: '16px Arial', fill: '#dddddd', align: 'center' })
+    const text = this.add.text(
+      this.world.centerX,
+      this.world.centerY,
+      'loading fonts',
+      this.loadingFont
+    )
     text.anchor.setTo(0.5, 0.5)
 
     this.load.image('loaderBg', './assets/images/loader-bg.png')
@@ -31,5 +36,14 @@ export default class extends Phaser.State {
 
   fontsLoaded () {
     this.fontsReady = true
+  }
+
+  get loadingFont () {
+    return {
+      font:
+      '16px Arial',
+      fill: '#dddddd',
+      align: 'center'
+    }
   }
 }

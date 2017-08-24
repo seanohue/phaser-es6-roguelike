@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
-import { centerGameObjects } from '../utils'
+import { centerGameObjects } from '../utils/GameObjects'
 
-export default class extends Phaser.State {
+export default class SplashState extends Phaser.State {
   init () {}
 
   preload () {
@@ -17,6 +17,6 @@ export default class extends Phaser.State {
   }
 
   create () {
-    this.state.start('Game')
+    this.state.start('Menu')
   }
 }
