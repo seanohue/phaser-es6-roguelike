@@ -49,15 +49,43 @@ export default class MenuState extends Phaser.State {
         action () {}
       }
     ]
-    this.menuItems = menuItems
+    this.addMenuItems(menuItems)
     this.renderMenuItems()
+  }
+
+  addMenuItems(menuItems) {
+    const isValidMenuItem = item =>
+      typeof item.label === 'string' &&
+      typeof item.action === 'function'
+
+    const items = [].concat(menuItems)
+
+    if (menuItems.every(isValidMenuItem)) {
+      this.menuItems = this.menuItems.concat(menuItems)
+    } else {
+      throw new TypeError(
+        'Menu Items must be an object, or an array of objects, each with a label and action.\nInstead, we have: ' + JSON.stringify(menuItems)
+      )
+    }
   }
 
   renderMenuItems () {
     this.menuItems.forEach(this.renderMenuItem.bind(this))
   }
 
-  renderMenuItem () {}
+  renderMenuItem (item, index) {
+    console.log(index);
+    const marginTop = 80 + (index * 36)
+    const labelWidth = 24 * item.label.length;
+    // TODO: Actually do the dang thing.
+    this.add.text(
+      this.world.centerX - (labelWidth / 2),
+      marginTop,
+      item.label
+    )
+    // How to add clickable/selectable menu item?
+    // Set up controls so up/down and select all work, as well as mouse clickage.
+  }
 
   addBannerText (bannerText) {
     return this.add.text(
