@@ -74,17 +74,33 @@ export default class MenuState extends Phaser.State {
   }
 
   renderMenuItem (item, index) {
-    console.log(index);
     const marginTop = 80 + (index * 36)
     const labelWidth = 24 * item.label.length;
     // TODO: Actually do the dang thing.
-    this.add.text(
+    const text = this.add.text(
       this.world.centerX - (labelWidth / 2),
       marginTop,
       item.label
     )
-    // How to add clickable/selectable menu item?
-    // Set up controls so up/down and select all work, as well as mouse clickage.
+
+    text.anchor.set(0.5)
+
+    console.log(text.events.onInputOver.add((text) => this.hover(item, text), text));
+    text.events.onInputOut.add((text) => this.unhover(item, text), text);
+
+    text.events.onInputDown.add((text) => this.click(item, text), text);
+    // text.events.onInputUp.add(up, this);
+  }
+
+  hover(text) {
+    console.log('hovering', text)
+  }
+
+  unhover(text) {}
+
+  click(item, text) {
+    console.log('Selected', item, text);
+    item.action();
   }
 
   addBannerText (bannerText) {
